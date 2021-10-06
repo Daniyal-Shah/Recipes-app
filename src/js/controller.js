@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { async } from 'regenerator-runtime';
 import Search from './models/Search';
-import { elements } from './views/base';
+import { elements, renderLoader,hideMessage,clearLoader } from './views/base';
 import * as searchView from './views/searchView'
 
 // Global state object
@@ -22,10 +22,18 @@ const controlSearch= async()=>
     {
         // 2- now search object and add to state
         state.search = new Search(query);
+
         // 3-Prepare results for UI
+        searchView.clearInput();
+        searchView.clearResults();
+        hideMessage();
+        renderLoader(elements.searchRes);
+
 
         // 4- Search for recipies
         await state.search.getResults();
+        clearLoader();
+        
 
         // 5-renders results on UI
         console.log(state.search.result)
