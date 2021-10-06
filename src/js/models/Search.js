@@ -6,7 +6,8 @@ export default class Search
 {
     constructor(query)
     {
-        this.query=query;        
+        this.query=query;
+        this.result=null;        
     }
 
     async getResults()
@@ -14,9 +15,7 @@ export default class Search
         try 
         {
             const res = await axios(`https://recipesapi.herokuapp.com/api/v2/recipes?q=${this.query}&page=1`);
-            // const data = await result.json();
-            this.result = res.data.recipes;
-            console.log(this.result);
+             this.result = res.data.recipes;      
         } 
         catch (error) 
         {
