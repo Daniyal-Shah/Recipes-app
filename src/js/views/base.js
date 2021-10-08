@@ -3,7 +3,8 @@ export const elements={
     searchInput: document.querySelector('.search__field'),
     searchResList: document.querySelector('.results'),
     searchRes: document.querySelector('.recipe'),
-    searchMessage: document.querySelector('.message')
+    searchMessage: document.querySelector('.message'),
+    searchResPages: document.querySelector('.pagination')
 } 
 
 export const renderLoader= ()=> 
