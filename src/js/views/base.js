@@ -4,7 +4,8 @@ export const elements={
     searchResList: document.querySelector('.results'),
     searchRes: document.querySelector('.recipe'),
     searchMessage: document.querySelector('.message'),
-    searchResPages: document.querySelector('.pagination')
+    searchResPages: document.querySelector('.pagination'),
+    recipe: document.querySelector('.recipe')
 } 
 
 export const renderLoader= ()=> 
@@ -13,12 +14,17 @@ export const renderLoader= ()=>
 
 } 
 
+export const clearRecipies=()=>{
+    elements.recipe.innerHTML='';
+}
+
 export const hideMessage= ()=>
 {
     document.getElementById('messageSearch').style.display="none";
     // const element= document.querySelector('.message');
     // element.parentNode.removeChild(element);
 }
+
 
 export const clearLoader=()=>
 {
